@@ -10,7 +10,6 @@
     flex-direction: column;
 }
 
-
 .sort-button {
     border: none;
     padding: 1em;
@@ -32,6 +31,12 @@
 }
 
 .house-logo {
+    height: 20em;
+    width: 20em;
+    border-radius: 1em;
+}
+
+.harry-potter-cartoon {
     height: 20em;
     width: 20em;
     border-radius: 1em;
