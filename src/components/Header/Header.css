@@ -1,0 +1,13 @@
+.logo {
+    height: 7em;
+    display: flex;
+    align-self: flex-end; 
+}
+
+.header-container {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
