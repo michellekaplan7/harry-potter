@@ -4,7 +4,7 @@ import "./Landing.css";
 
 const Landing = () => {
   return (
-    <div>
+    <div className="landing-container">
       <Link className="landing-link" to="/explore">
         <button className="landing-button">I Solemnly Swear That I Am Up To No Good</button>
       </Link>
