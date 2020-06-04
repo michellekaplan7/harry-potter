@@ -14,6 +14,7 @@
     border-radius: 2em;
     cursor: pointer;
     background-color: #E0B953;
+    font-weight: 700;
 }
 
 .landing-button:hover {
@@ -27,5 +28,5 @@
     display: flex;
     align-self: flex-end;
     text-decoration: none;
-    margin: 5em;
+    margin: 10em;
 }
