@@ -1,0 +1,38 @@
+.sorting-container {
+    background-image: url("/images/wand.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.sort-button {
+    border: none;
+    padding: 1em;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color: #E0B953;
+    font-weight: 700;
+    width: 20em;
+    height: 4em;
+}
+
+.sort-button:hover {
+    padding: 1em;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color: rgb(175, 138, 42);
+    width: 20em;
+    height: 4em;
+}
+
+.house-logo {
+    height: 20em;
+    width: 20em;
+    border-radius: 1em;
+}
