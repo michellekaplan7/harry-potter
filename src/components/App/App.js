@@ -5,6 +5,7 @@ import Landing from "../Landing/Landing";
 import Header from "../Header/Header";
 import Explore from "../Explore/Explore";
 import RandomHouse from "../RandomHouse/RandomHouse";
+import Advice from "../Advice/Advice";
 
 class App extends Component {
   constructor() {
@@ -16,6 +17,17 @@ class App extends Component {
     return (
       <main className="App">
         <Switch>
+          <Route 
+          path="/explore/advice"
+          render={() => {
+            return (
+              <div>
+                <Header />
+                <Advice />
+              </div>
+            )
+          }}
+          />
           <Route
             path="/explore/sort"
             render={() => {
