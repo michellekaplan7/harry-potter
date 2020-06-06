@@ -7,7 +7,10 @@
     width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
 }
 
 .sort-button {
@@ -19,15 +22,16 @@
     font-weight: 700;
     width: 20em;
     height: 4em;
+    margin-top: 1rem;
+    outline: none;
 }
 
 .sort-button:hover {
-    padding: 1em;
-    border-radius: 2em;
-    cursor: pointer;
-    background-color: rgb(175, 138, 42);
-    width: 20em;
-    height: 4em;
+    background-color: hsl(43, 61%, 43%);
+}
+
+.sort-button:focus {
+    border: 3px solid hsl(43, 61%, 30%)
 }
 
 .house-logo {
@@ -40,4 +44,11 @@
     height: 20em;
     width: 20em;
     border-radius: 1em;
+}
+
+.house {
+    color: red;
+    font-weight: 700;
+    font-size: 2em;
+    margin: 1em;
 }
