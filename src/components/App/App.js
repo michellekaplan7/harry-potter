@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import Explore from "../Explore/Explore";
 import RandomHouse from "../RandomHouse/RandomHouse";
 import Advice from "../Advice/Advice";
+import SpellsContainer from "../SpellsContainer/SpellsContainer";
 
 class App extends Component {
   constructor() {
@@ -17,6 +18,17 @@ class App extends Component {
     return (
       <main className="App">
         <Switch>
+          <Route
+          path="/explore/spells"
+          render={() => {
+            return (
+              <div>
+                <Header />
+                <SpellsContainer />
+              </div>
+            )
+          }}
+          />
           <Route 
           path="/explore/advice"
           render={() => {
