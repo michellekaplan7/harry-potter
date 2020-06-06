@@ -23,7 +23,7 @@
 
 
 .fav-spell-button, 
-.sort-spell-button {
+select {
     padding: 1em;
     border-radius: 2em;
     cursor: pointer;
@@ -34,6 +34,6 @@
 }
 
 .fav-spell-button:hover, 
-.sort-spell-button:hover {
+select:hover {
     background-color: rgb(175, 138, 42);
 }
