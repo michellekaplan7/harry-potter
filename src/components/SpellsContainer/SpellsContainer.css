@@ -1,0 +1,39 @@
+.spells-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    grid-gap: 1em;
+    padding: 2em 10em;
+}
+
+.spell-page {
+    background-image: url("/images/potions-classroom.jpg");
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+}
+
+.spell-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2em 2em 0 0;
+}
+
+
+.fav-spell-button, 
+.sort-spell-button {
+    padding: 1em;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color: #E0B953;
+    font-weight: 700;
+    width: 20em;
+    margin-right: 2em;
+}
+
+.fav-spell-button:hover, 
+.sort-spell-button:hover {
+    background-color: rgb(175, 138, 42);
+}
