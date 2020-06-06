@@ -1,4 +1,40 @@
 .hermione-image {
     height: 20em;
     border-radius: 1em;
+    margin-bottom: 1rem;
+}
+
+.advice-container {
+    background-image: url("/images/old-car-parked-near-tree.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+
+.advice-button {
+    padding: 1em;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color: #E0B953;
+    font-weight: 700;
+    width: 20em;
+}
+
+.advice-button:hover {
+    background-color: rgb(175, 138, 42);
+}
+
+.advice {
+    color: red;
+    margin: 1em;
+    font-weight: 700;
+    font-size: 2em;
 }
