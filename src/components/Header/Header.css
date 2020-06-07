@@ -5,10 +5,14 @@
 }
 
 .header-container {
-    background-color: red;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     height: 4em;
+}
+
+h1 {
+    color: black;
 }
