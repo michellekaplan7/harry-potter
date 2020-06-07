@@ -1,0 +1,14 @@
+.characters-container {
+    background-image: url("/images/hungarian-horntail-dragon.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
