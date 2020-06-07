@@ -4,23 +4,8 @@ export const getRandomHouse = async () => {
   return houseData;
 };
 
-// export const getAdvice = async (setError, setIsLoading, setAdvice) => {
-//     const url = 'https://api.adviceslip.com/advice'
-//     setError('')
-//     setIsLoading(true)
-//     try {
-//       const response = await fetch(url)
-//       const advice = await response.json()
-//       setAdvice(advice.slip.advice)
-//     } catch(error) {
-//       setError(error.message)
-//     }
-//     setIsLoading(false)
-//   }
-
 export const getAdvice = async () => {
   const url = "https://api.adviceslip.com/advice";
-  //   setError('')
 
   try {
     const response = await fetch(url, {
@@ -28,11 +13,9 @@ export const getAdvice = async () => {
     });
     const advice = await response.json();
     return advice;
-    // setAdvice(advice.slip.advice)
   } catch (error) {
-    // setError(error.message)
+    console.log(error.message);
   }
-  //   setIsLoading(false)
 };
 
 export const getSpells = async () => {
@@ -55,23 +38,21 @@ export const getCharacters = async () => {
   try {
     const response = await fetch(url);
     const charactersData = await response.json();
-    const promises = charactersData.map(character => {
+    const promises = charactersData.map((character) => {
       return {
         id: character._id,
-        name:character.name,
-        role:character.role,
-        house:character.house,
-        ministryOfMagic:character.ministryOfMagic,
-        orderOfThePhoenix:character.orderOfThePhoenix,
-        dumbledoresArmy:character.dumbledoresArmy,
-        deathEater:character.deathEater,
-        bloodStatus:character.bloodStatus,
-        species: character.species
+        name: character.name,
+        role: character.role,
+        house: character.house,
+        ministryOfMagic: character.ministryOfMagic,
+        orderOfThePhoenix: character.orderOfThePhoenix,
+        dumbledoresArmy: character.dumbledoresArmy,
+        deathEater: character.deathEater,
+        bloodStatus: character.bloodStatus,
+        species: character.species,
       };
-    })
-    return Promise.all(promises)
-
-    
+    });
+    return Promise.all(promises);
   } catch (error) {
     console.log(error.message);
   }
