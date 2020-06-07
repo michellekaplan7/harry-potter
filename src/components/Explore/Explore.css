@@ -15,7 +15,7 @@
 
 h2 {
     font-size: 5em;
-    color: red;
+    color: #f0f8ff;
     margin-bottom: 1rem;
 }
 
@@ -32,8 +32,19 @@ h2 {
     background-color: #E0B953;
     font-weight: 700;
     width: 20em;
+    border: none;
+    outline: none;
 }
 
 .explore-button:hover {
-    background-color: rgb(175, 138, 42);
+    background-color: #ffdc2a;
+}
+
+.explore-button:focus {
+    border: 3px solid #bf4e4e;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
 }
