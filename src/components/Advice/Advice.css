@@ -2,6 +2,7 @@
     height: 20em;
     border-radius: 1em;
     margin-bottom: 1rem;
+    border: 1px solid #f0f8ff;
 }
 
 .advice-container {
@@ -26,14 +27,20 @@
     background-color: #E0B953;
     font-weight: 700;
     width: 20em;
+    border: none;
+    outline: none;
 }
 
 .advice-button:hover {
-    background-color: rgb(175, 138, 42);
+    background-color: #ffdc2a;
+}
+
+.advice-button:focus {
+    border: 3px solid #bf4e4e;
 }
 
 .advice {
-    color: red;
+    color: #f0f8ff;
     margin: 1em;
     font-weight: 700;
     font-size: 2em;
