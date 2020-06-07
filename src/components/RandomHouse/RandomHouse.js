@@ -20,7 +20,10 @@ class RandomHouse extends Component {
 
     return (
       <div className="sorting-container">
-        {this.state.house && <h3>{this.state.house.toUpperCase()}!</h3>}
+        <h2>Let the sorting begin!</h2>
+        {this.state.house && (
+          <h3 className="house">{this.state.house.toUpperCase()}!</h3>
+        )}
 
         {this.state.house ? (
           <img

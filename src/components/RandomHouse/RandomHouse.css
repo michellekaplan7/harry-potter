@@ -7,7 +7,10 @@
     width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
 }
 
 .sort-button {
@@ -19,25 +22,36 @@
     font-weight: 700;
     width: 20em;
     height: 4em;
+    margin-top: 1rem;
+    outline: none;
 }
 
 .sort-button:hover {
-    padding: 1em;
-    border-radius: 2em;
-    cursor: pointer;
-    background-color: rgb(175, 138, 42);
-    width: 20em;
-    height: 4em;
+    background-color: #ffdc2a;
+}
+
+.sort-button:focus {
+    border: 3px solid #bf4e4e;
 }
 
 .house-logo {
     height: 20em;
     width: 20em;
     border-radius: 1em;
+    border: 1px solid #f0f8ff;
 }
 
 .harry-potter-cartoon {
     height: 20em;
     width: 20em;
     border-radius: 1em;
+    border: 1px solid #f0f8ff;
+}
+
+.house {
+    color: #f0f8ff;
+    font-weight: 700;
+    font-size: 2em;
+    margin: 1em;
+    letter-spacing: 0.2em;
 }

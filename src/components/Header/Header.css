@@ -1,13 +1,18 @@
 .logo {
-    height: 7em;
-    display: flex;
-    align-self: flex-end; 
+    height: 100%;
+    position: absolute;
+    right: 0;
 }
 
 .header-container {
-    background-color: red;
+    background-color: white;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: relative;
+    height: 4em;
+}
+
+h1 {
+    color: black;
 }
