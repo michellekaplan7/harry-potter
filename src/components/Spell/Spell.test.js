@@ -38,11 +38,10 @@ describe("Spell", () => {
       </MemoryRouter>
     );
 
-    const { container } = render(router);
+    const { getByTestId } = render(router);
 
-    const starButton = container.firstChild.firstChild.nextSibling.nextSibling.nextSibling;
-
-    expect(container.firstChild).toBeInTheDocument();
+    const starButton = getByTestId("emptyStar-5b74ebd5fb6fc0739646754c").firstChild;
+    expect(starButton).toBeInTheDocument();
     fireEvent.click(starButton);
     expect(mockToggleFavorites).toHaveBeenCalledWith("5b74ebd5fb6fc0739646754c");
   });
