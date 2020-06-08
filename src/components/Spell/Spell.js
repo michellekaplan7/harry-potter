@@ -11,17 +11,21 @@ const Spell = ({ id, effect, spell, type, toggleFavorites, favorite }) => {
       <h4>Type: {type}</h4>
 
       {favorite ? (
-        <MdStar
-          color="yellow"
-          fontSize="60px"
-          onClick={() => toggleFavorites(id)}
-        />
+        <div data-testid={`fullStar-${id}`}>
+          <MdStar
+            color="yellow"
+            fontSize="60px"
+            onClick={() => toggleFavorites(id)}
+          />
+        </div>
       ) : (
-        <MdStarOutline
-          color="white"
-          fontSize="60px"
-          onClick={() => toggleFavorites(id)}
-        />
+        <div data-testid={`emptyStar-${id}`}>
+          <MdStarOutline
+            color="white"
+            fontSize="60px"
+            onClick={() => toggleFavorites(id)}
+          />
+        </div>
       )}
     </div>
   );
