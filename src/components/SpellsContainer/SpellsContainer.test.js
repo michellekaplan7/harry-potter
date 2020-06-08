@@ -160,24 +160,54 @@ describe("SpellsContainer", () => {
     expect(favoritedSpell).toBeInTheDocument()
   });
 
-  // it("should show the error message of no favorites if you've favorited, filtered by favorites, and then unfavorite all favorites", async () => {
-  //   const router = (
-  //     <MemoryRouter>
-  //       <SpellsContainer />
-  //     </MemoryRouter>
-  //   );
+  it("should show the error message of no favorites if you've favorited, filtered by favorites, and then unfavorite all favorites", async () => {
+    const router = (
+      <MemoryRouter>
+        <SpellsContainer />
+      </MemoryRouter>
+    );
 
-  //   const { getByRole, getByText, getByTestId } = render(router);
+    const { getByRole, getByText, getByTestId } = render(router);
 
-  //   const starButton = await waitFor(() => getByTestId("emptyStar-5b74ebd5fb6fc0739646754c").firstChild);
-  //   fireEvent.click(starButton);
+    const starButton = await waitFor(() => getByTestId("emptyStar-5b74ebd5fb6fc0739646754c").firstChild);
+    fireEvent.click(starButton);
 
-  //   const filterSpells = getByRole("combobox");
-  //   fireEvent.change(filterSpells, { target: { value: "Favorites" } });
-  //   const filledStarButton = await waitFor(() => getByTestId("fullStar-5b74ebd5fb6fc0739646754c"));
-  //   expect(filledStarButton).toBeInTheDocument()
-  //   fireEvent.click(filledStarButton);
-  //   const errorMessage = await waitFor(() => getByText("You currently have no favorite spells. Add some!"));
-  //   expect(errorMessage).toBeInTheDocument();
-  // });
+    const favoritesCount = await waitFor(() => getByText("Favorites (1)"));
+    expect(favoritesCount).toBeInTheDocument();
+
+    const filterSpells = getByRole("combobox");
+    fireEvent.change(filterSpells, { target: { value: "Favorites" } });
+    const filledStarButton = await waitFor(() => getByTestId("fullStar-5b74ebd5fb6fc0739646754c").firstChild);
+    expect(filledStarButton).toBeInTheDocument()
+    fireEvent.click(filledStarButton);
+
+    const errorMessage = await waitFor(() => getByText("You currently have no favorite spells. Add some!"));
+    expect(errorMessage).toBeInTheDocument();
+  });
+
+  it("should allow the user to favorite and unfavorite a spell", async () => {
+    const router = (
+      <MemoryRouter>
+        <SpellsContainer />
+      </MemoryRouter>
+    );
+
+    const { getByText, getByTestId } = render(router);
+
+    const favoritesCountStart = await waitFor(() => getByText("Favorites (0)"));
+    expect(favoritesCountStart).toBeInTheDocument();
+
+    const starButton = await waitFor(() => getByTestId("emptyStar-5b74ebd5fb6fc0739646754c").firstChild);
+    fireEvent.click(starButton);
+
+    const favoritesCountUpdated = await waitFor(() => getByText("Favorites (1)"));
+    expect(favoritesCountUpdated).toBeInTheDocument();
+
+    const filledStarButton = await waitFor(() => getByTestId("fullStar-5b74ebd5fb6fc0739646754c").firstChild);
+    expect(filledStarButton).toBeInTheDocument()
+    fireEvent.click(filledStarButton);
+
+    const favoritesCountAfter = await waitFor(() => getByText("Favorites (0)"));
+    expect(favoritesCountAfter).toBeInTheDocument();
+  });
 });
