@@ -12,12 +12,16 @@ class CharactersContainer extends Component {
       favorites: [],
       filtered: [],
       useFavoritedData: false,
+      isLoading: false,
     };
   }
 
-  componentDidMount = async () => {
-    const characters = await getCharacters();
-    this.setState({ characters, filtered: characters });
+  componentDidMount = () => {
+    let characters = []
+    this.setState({ isLoading: true }, async () => {
+      characters = await getCharacters();
+      this.setState({ characters, filtered: characters, isLoading: false });
+    })
   };
 
   toggleFavorites = (id) => {
@@ -68,7 +72,11 @@ class CharactersContainer extends Component {
   }
 
   render() {
+    if (this.state.isLoading) {
+      return <h3>Loading...</h3>
+    }
     let data;
+    let characterCards = null;
  
     if (!this.state.useFavoritedData) {
       data = this.state.filtered
@@ -78,31 +86,35 @@ class CharactersContainer extends Component {
       data = this.state.favorites
     }
 
-    let characterCards = data.map((character) => {
-        let favorite = false;
-        this.state.favoritesID.forEach((id) => {
-            if (character.id === id) {
-                favorite = true;
-            }
-        })
-
-      return (
-        <Character
-            id={character.id}
-            key={character.id} 
-            name={character.name} 
-            role={character.role}
-            house={character.house}
-            ministryOfMagic={character.ministryOfMagic}
-            orderOfThePhoenix={character.orderOfThePhoenix}
-            dumbledoresArmy={character.dumbledoresArmy}
-            deathEater={character.deathEater}
-            bloodStatus={character.bloodStatus}
-            species={character.species}
-            favorite={favorite}
-            toggleFavorites={this.toggleFavorites}
-        />);
-    });
+    if(data.length ===0) {
+      characterCards = <h3>You currently have no favorite characters. Add some!</h3>;
+    } else {
+      characterCards = data.map((character) => {
+          let favorite = false;
+          this.state.favoritesID.forEach((id) => {
+              if (character.id === id) {
+                  favorite = true;
+              }
+          })
+  
+        return (
+          <Character
+              id={character.id}
+              key={character.id} 
+              name={character.name} 
+              role={character.role}
+              house={character.house}
+              ministryOfMagic={character.ministryOfMagic}
+              orderOfThePhoenix={character.orderOfThePhoenix}
+              dumbledoresArmy={character.dumbledoresArmy}
+              deathEater={character.deathEater}
+              bloodStatus={character.bloodStatus}
+              species={character.species}
+              favorite={favorite}
+              toggleFavorites={this.toggleFavorites}
+          />);
+      });
+    }
 
     return (
       <div className="characters-page">
@@ -110,7 +122,7 @@ class CharactersContainer extends Component {
         <div className="character-buttons-container">
           <h3 className="favorites-count">Favorites ({this.state.favoritesID.length})</h3>
           <select onChange={(e) => this.handleChange(e)}>
-            <option value="">--Filter By--</option>
+            <option value="">Filter By</option>
             <option value="All">All Characters</option>
             <option value="Favorites">Favorites</option>
             <option value="Gryffindor">Gryffindor</option>
