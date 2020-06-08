@@ -35,3 +35,11 @@
   margin: 10em;
   outline: none;
 }
+
+@media only screen and (max-width: 658px) {
+  .landing-button {
+    width: 25em;
+    font-size: 0.8em;
+    overflow: auto;
+  }
+}
