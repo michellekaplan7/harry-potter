@@ -89,4 +89,23 @@ describe("SpellsContainer", () => {
     const effectAfter = await waitFor(() => getAllByText("Effect", {exact: false}));
     expect(effectAfter).toHaveLength(3);
   });
+
+  it("should have zero favorite spells upon load and show an error message when trying to filter by favorites", async () => {
+    const router = (
+      <MemoryRouter>
+        <SpellsContainer />
+      </MemoryRouter>
+    );
+
+    const { getByText, getByRole } = render(router);
+
+    const favoritesCount = await waitFor(() => getByText("Favorites (0)"));
+    expect(favoritesCount).toBeInTheDocument();
+
+    const filterSpells = await waitFor(() => getByRole("combobox"));
+    fireEvent.change(filterSpells, { target: { value: "Favorites"}});
+
+    const errorMessage = getByText("You currently have no favorite spells. Add some!");
+    expect(errorMessage).toBeInTheDocument();
+  });
 });
