@@ -40,7 +40,6 @@ const Character = (props) => {
 
 Character.propTypes = {
   id: PropTypes.string,
-  key: PropTypes.string, 
   name: PropTypes.string, 
   role: PropTypes.string,
   house: PropTypes.string,
