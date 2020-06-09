@@ -19,7 +19,7 @@ const Character = (props) => {
       {props.favorite ? (
         <div data-testid={`fullStar-${props.id}`}>
         <MdStar
-          color="yellow"
+          color="#e0b953"
           fontSize="60px"
           onClick={() => props.toggleFavorites(props.id)}
         />
