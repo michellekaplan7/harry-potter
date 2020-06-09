@@ -1,29 +1,29 @@
 .sorting-container {
-    background-image: url("/images/wand.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-    background-position: center;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
+	  background-attachment: fixed;
     background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url("/images/wand.jpg");
+    background-position: center;
+	  background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
 }
 
 .sort-button {
+    background-color: #E0B953;
     border: none;
-    padding: 1em;
     border-radius: 2em;
     cursor: pointer;
-    background-color: #E0B953;
     font-weight: 700;
-    width: 20em;
     height: 4em;
     margin-top: 1rem;
     outline: none;
+    padding: 1em;
+    width: 20em;
 }
 
 .sort-button:hover {
@@ -35,23 +35,23 @@
 }
 
 .house-logo {
+    border: 1px solid #f0f8ff;
+    border-radius: 1em;
     height: 20em;
     width: 20em;
-    border-radius: 1em;
-    border: 1px solid #f0f8ff;
 }
 
 .harry-potter-cartoon {
+    border: 1px solid #f0f8ff;
+    border-radius: 1em;
     height: 20em;
     width: 20em;
-    border-radius: 1em;
-    border: 1px solid #f0f8ff;
 }
 
 .house {
     color: #f0f8ff;
-    font-weight: 700;
     font-size: 2em;
-    margin: 1em;
+    font-weight: 700;
     letter-spacing: 0.2em;
+    margin: 1em;
 }
