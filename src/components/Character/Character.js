@@ -17,19 +17,21 @@ const Character = (props) => {
       <h3 className="character-info"><span>Blood Status:</span> {props.bloodStatus}</h3>
       <h3 className="character-info"><span>Species:</span> {props.species}</h3>
       {props.favorite ? (
+        <div data-testid={`fullStar-${props.id}`}>
         <MdStar
           color="yellow"
           fontSize="60px"
-          //   className="spell-remove-fav"
           onClick={() => props.toggleFavorites(props.id)}
         />
+        </div>
       ) : (
+        <div data-testid={`emptyStar-${props.id}`}>
         <MdStarOutline
           color="white"
           fontSize="60px"
-          //   className="spot-add-fav"
           onClick={() => props.toggleFavorites(props.id)}
         />
+        </div>
       )}
     </div>
   );
