@@ -21,7 +21,7 @@ class CharactersContainer extends Component {
     this.setState({ isLoading: true }, async () => {
       characters = await getCharacters();
       this.setState({ characters, filtered: characters, isLoading: false }, () => {
-        // this.getLocalStorage()
+        this.getLocalStorage()
       });
     })
   };
@@ -29,7 +29,7 @@ class CharactersContainer extends Component {
   toggleFavorites = (id) => {
     if (!this.state.favoritesID.includes(id)) {
       this.setState({ favoritesID: [...this.state.favoritesID, id] }, () => {
-        // this.updateLocalStorage()
+        this.updateLocalStorage()
       });
     } else {
       let newFavoritesID = this.state.favoritesID.filter((favorite) => {
@@ -39,23 +39,23 @@ class CharactersContainer extends Component {
         return favorite.id !== id;
       });
       this.setState({ favoritesID: newFavoritesID, favorites: newFavorites }, () => {
-        // this.updateLocalStorage()
+        this.updateLocalStorage()
       });
     }
   };
 
-  // updateLocalStorage = () => {
-  //   window.localStorage.setItem("favoriteCharacterIDs", JSON.stringify(this.state.favoritesID));
-  // }
+  updateLocalStorage = () => {
+    window.localStorage.setItem("favoriteCharacterIDs", JSON.stringify(this.state.favoritesID));
+  }
 
-  // getLocalStorage = () => {
-  //   const favoriteCharacterIDs = window.localStorage.getItem("favoriteCharacterIDs")
-  //   if (!favoriteCharacterIDs) {
-  //     return;
-  //   }
-  //   const savedFavoriteCharacterIDs = JSON.parse(favoriteCharacterIDs)
-  //   this.setState({ favoritesID: savedFavoriteCharacterIDs })
-  // }
+  getLocalStorage = () => {
+    const favoriteCharacterIDs = window.localStorage.getItem("favoriteCharacterIDs")
+    if (!favoriteCharacterIDs) {
+      return;
+    }
+    const savedFavoriteCharacterIDs = JSON.parse(favoriteCharacterIDs)
+    this.setState({ favoritesID: savedFavoriteCharacterIDs })
+  }
 
   displayFavorites = () => {
     let matchedCharacter = this.state.characters.filter(character => {
