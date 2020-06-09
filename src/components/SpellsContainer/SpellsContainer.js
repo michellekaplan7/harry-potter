@@ -45,16 +45,16 @@ class SpellsContainer extends Component {
   };
 
   updateLocalStorage = () => {
-    window.localStorage.setItem("favoritesID", JSON.stringify(this.state.favoritesID));
+    window.localStorage.setItem("favoriteSpellsIDs", JSON.stringify(this.state.favoritesID));
   }
 
   getLocalStorage = () => {
-    const favoritesID = window.localStorage.getItem("favoritesID")
-    if (!favoritesID) {
+    const favoriteSpellIDs = window.localStorage.getItem("favoriteSpellsIDs")
+    if (!favoriteSpellIDs) {
       return;
     }
-    const savedFavoritesID = JSON.parse(favoritesID)
-    this.setState({ favoritesID: savedFavoritesID })
+    const savedFavoriteSpellsIDs = JSON.parse(favoriteSpellIDs)
+    this.setState({ favoritesID: savedFavoriteSpellsIDs })
   }
 
   displayFavorites = () => {
