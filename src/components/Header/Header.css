@@ -5,12 +5,12 @@
 }
 
 .header-container {
+    align-items: center;
     background-color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     height: 4em;
+    justify-content: center;
+    position: relative;
 }
 
 h1 {

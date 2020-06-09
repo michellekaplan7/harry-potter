@@ -1,13 +1,13 @@
 .character-container {
-    border: 1px solid red;
-    padding: 5em;
-    color: white;
     background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid red;
+    color: white;
+    padding: 5em;
 }
 
 .character-info {
-    margin: 1em;
     font-size: 1.5em;
+    margin: 1em;
 }
 
 span {
