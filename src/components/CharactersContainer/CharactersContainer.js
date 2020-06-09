@@ -20,13 +20,17 @@ class CharactersContainer extends Component {
     let characters = []
     this.setState({ isLoading: true }, async () => {
       characters = await getCharacters();
-      this.setState({ characters, filtered: characters, isLoading: false });
+      this.setState({ characters, filtered: characters, isLoading: false }, () => {
+        this.getLocalStorage()
+      });
     })
   };
 
   toggleFavorites = (id) => {
     if (!this.state.favoritesID.includes(id)) {
-      this.setState({ favoritesID: [...this.state.favoritesID, id] });
+      this.setState({ favoritesID: [...this.state.favoritesID, id] }, () => {
+        this.updateLocalStorage()
+      });
     } else {
       let newFavoritesID = this.state.favoritesID.filter((favorite) => {
         return favorite !== id;
@@ -34,9 +38,24 @@ class CharactersContainer extends Component {
       let newFavorites = this.state.favorites.filter((favorite) => {
         return favorite.id !== id;
       });
-      this.setState({ favoritesID: newFavoritesID, favorites: newFavorites });
+      this.setState({ favoritesID: newFavoritesID, favorites: newFavorites }, () => {
+        this.updateLocalStorage()
+      });
     }
   };
+
+  updateLocalStorage = () => {
+    window.localStorage.setItem("favoriteCharacterIDs", JSON.stringify(this.state.favoritesID));
+  }
+
+  getLocalStorage = () => {
+    const favoriteCharacterIDs = window.localStorage.getItem("favoriteCharacterIDs")
+    if (!favoriteCharacterIDs) {
+      return;
+    }
+    const savedFavoriteCharacterIDs = JSON.parse(favoriteCharacterIDs)
+    this.setState({ favoritesID: savedFavoriteCharacterIDs })
+  }
 
   displayFavorites = () => {
     let matchedCharacter = this.state.characters.filter(character => {
