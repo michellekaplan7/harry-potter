@@ -87,7 +87,7 @@ class CharactersContainer extends Component {
     }
 
     if(data.length ===0) {
-      characterCards = <h3>You currently have no favorite characters. Add some!</h3>;
+      characterCards = <h3 className="no-favorites-message">You currently have no favorite characters. Add some!</h3>;
     } else {
       characterCards = data.map((character) => {
           let favorite = false;
