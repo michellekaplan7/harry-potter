@@ -12,7 +12,7 @@ Wizard Harry was a solo project for the Turing School of Software & Design, whic
 
 ## Deployed at
 
-www.wizardharry.com
+https://wizardharry.netlify.app/
 
 ## Setup
 
