@@ -73,7 +73,7 @@ class CharactersContainer extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <h3>Loading...</h3>
+      return <h3 className="loading-message">Loading...</h3>
     }
     let data;
     let characterCards = null;
