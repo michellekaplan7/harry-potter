@@ -20,9 +20,9 @@ describe("Spell", () => {
     );
 
     const { getByText } = render(router);
-    const spellName = getByText("Spell: Aberto");
-    const spellEffect = getByText("Effect: opens objects");
-    const spellType = getByText("Type: Charm");
+    const spellName = getByText("Spell:");
+    const spellEffect = getByText("Effect:");
+    const spellType = getByText("Type:");
 
     expect(spellName).toBeInTheDocument();
     expect(spellEffect).toBeInTheDocument();
