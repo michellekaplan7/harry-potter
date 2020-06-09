@@ -72,6 +72,11 @@ const mockCharactersData = [
 getCharacters.mockResolvedValue(mockCharactersData);
 
 describe("CharactersContainer", () => {
+
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
   it("should render a loading message when fetching the character data", () => {
     const router = (
       <MemoryRouter>
