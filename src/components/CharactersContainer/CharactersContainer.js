@@ -81,13 +81,6 @@ class CharactersContainer extends Component {
       }
     })
     this.setState({filtered: filteredCharacter, useFavoritedData: false})
-
-    // let filterOrderOfThePhoenix = this.state.characters.filter(character => {
-    //     if (character[e.target.value] === true) {
-    //         return character
-    //     }
-    //   })
-    //   this.setState({filtered: filterOrderOfThePhoenix, useFavoritedData: false})
   }
 
   render() {
@@ -148,8 +141,6 @@ class CharactersContainer extends Component {
             <option value="Hufflepuff">Hufflepuff</option>
             <option value="Ravenclaw">Ravenclaw</option>
             <option value="Slytherin">Slytherin</option>
-            {/* <option value="orderOfThePhoenix">Order Of The Phoenix</option>
-            <option value="dumbledoresArmy">Dumbledores Army</option> */}
           </select>
         </div>
         <div className="characters-container">{characterCards}</div>
