@@ -1,100 +1,110 @@
 .spells-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
-    grid-gap: 1em;
-    padding: 2em 10em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  grid-gap: 1em;
+  padding: 2em 10em;
 }
 
 .spell-page {
-    background-image: url("/images/potions-classroom.jpg");
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    background-size: cover;
-	background-attachment: fixed;
-    background-position: center;
-    height: 100vh;
-    overflow: scroll;
+  background-image: url("/images/potions-classroom.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .spell-buttons-container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 2em 2em 0 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2em 2em 0 0;
 }
 
- select {
-    padding: 1em;
-    border-radius: 2em;
-    cursor: pointer;
-    background-color: #E0B953;
-    font-weight: 700;
-    width: 20em;
-    margin-right: 10em;
-    font-size: 1em;
-    border: none;
-    outline: none;
+select {
+  padding: 1em;
+  border-radius: 2em;
+  cursor: pointer;
+  background-color: #e0b953;
+  font-weight: 700;
+  width: 20em;
+  margin-right: 10em;
+  font-size: 1em;
+  border: none;
+  outline: none;
 }
 
 select:hover {
-    background-color: #ffdc2a;
+  background-color: #ffdc2a;
 }
 
 select:focus {
-    border: 3px solid #bf4e4e;
+  border: 3px solid #bf4e4e;
 }
 
 .favorites-count {
-    padding: 1em;
-    border-radius: 2em;
-    background-color: #E0B953;
-    font-weight: 700;
-    width: 10em;
-    margin-right: 2em;
-    text-align: center;
-    color: black;
+  padding: 1em;
+  border-radius: 2em;
+  background-color: #e0b953;
+  font-weight: 700;
+  width: 10em;
+  margin-right: 2em;
+  text-align: center;
+  color: black;
 }
 
 .spells-header {
-    justify-content: center;
-    display: flex;
-    margin-top: 0.5em;
+  justify-content: center;
+  display: flex;
+  margin-top: 0.5em;
 }
 
 .loading-message {
-    color: #bf4e4e;
-    display: flex;
-    justify-content: center;
-    font-size: 2em;
+  color: #bf4e4e;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
 }
 
-@media only screen and (max-width: 1450px) {
-    .spells-container {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
+.no-favorites-message {
+  color: red;
+  font-size: 4em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  @media only screen and (max-width: 1100px) {
-    .spells-container {
-        grid-template-columns: 1fr 1fr;
-    }
-  }
+.spell-info {
+    font-size: 1.5em;
+}
 
-  @media only screen and (max-width: 875px) {
-    .spells-container {
-        grid-template-columns: 1fr;
-        justify-content: center;
-    }
-    .favorites-count {
-        margin: 0;
-    }
+@media only screen and (max-width: 1530px) {
+  .spells-container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
+}
 
-  @media only screen and (max-width: 875px) {
-    select {
-        margin: 0;
-    }
-    select {
-        margin-right: 0;
-    }
+@media only screen and (max-width: 1190px) {
+  .spells-container {
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+@media only screen and (max-width: 875px) {
+  .spells-container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .favorites-count {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  select {
+    margin: 0;
+  }
+  select {
+    margin-right: 0;
+  }
+}
