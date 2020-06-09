@@ -140,7 +140,7 @@ describe("App", () => {
     fireEvent.click(spellBookButton);
 
     const spellBookHeader = await waitFor(() => getByText("Harry's Spell Book"));
-    const spell = await waitFor(() => getByText("Spell: Aberto"));
+    const spell = await waitFor(() => getByText("Spell"));
     expect(spellBookHeader).toBeInTheDocument();
     expect(spell).toBeInTheDocument();
   });
