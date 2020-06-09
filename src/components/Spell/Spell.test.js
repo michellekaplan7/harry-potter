@@ -34,13 +34,38 @@ describe("Spell", () => {
 
     const router = (
       <MemoryRouter>
-        <Spell {...mockSpellData} toggleFavorites={mockToggleFavorites} favorite={false} />
+        <Spell
+          {...mockSpellData}
+          toggleFavorites={mockToggleFavorites}
+          favorite={false}
+        />
       </MemoryRouter>
     );
 
     const { getByTestId } = render(router);
 
     const starButton = getByTestId("emptyStar-5b74ebd5fb6fc0739646754c").firstChild;
+    expect(starButton).toBeInTheDocument();
+    fireEvent.click(starButton);
+    expect(mockToggleFavorites).toHaveBeenCalledWith("5b74ebd5fb6fc0739646754c");
+  });
+
+  it("unfavorites a spell when you click on a star that has already been favorited", () => {
+    const mockToggleFavorites = jest.fn();
+
+    const router = (
+      <MemoryRouter>
+        <Spell
+          {...mockSpellData}
+          toggleFavorites={mockToggleFavorites}
+          favorite={true}
+        />
+      </MemoryRouter>
+    );
+
+    const { getByTestId } = render(router);
+
+    const starButton = getByTestId("fullStar-5b74ebd5fb6fc0739646754c").firstChild;
     expect(starButton).toBeInTheDocument();
     fireEvent.click(starButton);
     expect(mockToggleFavorites).toHaveBeenCalledWith("5b74ebd5fb6fc0739646754c");
