@@ -68,7 +68,7 @@ class SpellsContainer extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <h3>Loading...</h3>
+      return <h3 className="loading-message">Loading...</h3>
     }
 
     let data;
@@ -81,7 +81,7 @@ class SpellsContainer extends Component {
       data = this.state.favorites
     }
     if (data.length === 0) {
-      spellsCards = <h3>You currently have no favorite spells. Add some!</h3>;
+      spellsCards = <h3 className="no-favorites-message">You currently have no favorite spells. Add some!</h3>;
     } else {
       spellsCards = data.map((spell, i) => {
         let favorite = false;
