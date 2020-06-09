@@ -7,7 +7,6 @@ class Advice extends Component {
     super();
     this.state = {
       advice: "",
-      isLoading: false,
     };
   }
 
