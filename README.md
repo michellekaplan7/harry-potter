@@ -37,6 +37,7 @@ npm install
 - Sort characters by more than just house
 - Alphabetize characters
 - Implement search functionality for spells and characters
+- Commented out local storage code as it breaks 8 tests - would need to mock out local storage for testing purposes
 
 ## Contributors:
 
