@@ -20,7 +20,7 @@ const Character = (props) => {
         <div data-testid={`fullStar-${props.id}`}>
         <MdStar
           color="#e0b953"
-          fontSize="60px"
+          fontSize="80px"
           onClick={() => props.toggleFavorites(props.id)}
         />
         </div>
@@ -28,7 +28,7 @@ const Character = (props) => {
         <div data-testid={`emptyStar-${props.id}`}>
         <MdStarOutline
           color="white"
-          fontSize="60px"
+          fontSize="80px"
           onClick={() => props.toggleFavorites(props.id)}
         />
         </div>
