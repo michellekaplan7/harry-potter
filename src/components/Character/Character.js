@@ -1,5 +1,6 @@
 import React from "react";
 import "./Character.css";
+import PropTypes from "prop-types";
 import MdStar from "react-ionicons/lib/MdStar";
 import MdStarOutline from "react-ionicons/lib/MdStarOutline";
 
@@ -36,5 +37,21 @@ const Character = (props) => {
     </div>
   );
 };
+
+Character.propTypes = {
+  id: PropTypes.string,
+  key: PropTypes.string, 
+  name: PropTypes.string, 
+  role: PropTypes.string,
+  house: PropTypes.string,
+  ministryOfMagic: PropTypes.bool,
+  orderOfThePhoenix: PropTypes.bool,
+  dumbledoresArmy: PropTypes.bool,
+  deathEater: PropTypes.bool,
+  bloodStatus: PropTypes.string,
+  species: PropTypes.string,
+  favorite: PropTypes.bool,
+  toggleFavorites: PropTypes.func
+  };
 
 export default Character;
