@@ -21,7 +21,7 @@ class SpellsContainer extends Component {
     this.setState({ isLoading: true }, async () => {
       spells = await getSpells()
       this.setState({ spells, filtered: spells, isLoading: false }, () => {
-        // this.getLocalStorage()
+        this.getLocalStorage()
       });
     })
   };
@@ -29,7 +29,7 @@ class SpellsContainer extends Component {
   toggleFavorites = (id) => {
     if (!this.state.favoritesID.includes(id)) {
       this.setState({ favoritesID: [...this.state.favoritesID, id] }, () => {
-        // this.updateLocalStorage()
+        this.updateLocalStorage()
       });
     } else {
       let newFavoritesID = this.state.favoritesID.filter((favorite) => {
@@ -39,23 +39,23 @@ class SpellsContainer extends Component {
         return favorite._id !== id;
       });
       this.setState({ favoritesID: newFavoritesID, favorites: newFavorites }, () => {
-        // this.updateLocalStorage()
+        this.updateLocalStorage()
       });
     }
   };
 
-  // updateLocalStorage = () => {
-  //   window.localStorage.setItem("favoriteSpellsIDs", JSON.stringify(this.state.favoritesID));
-  // }
+  updateLocalStorage = () => {
+    window.localStorage.setItem("favoriteSpellsIDs", JSON.stringify(this.state.favoritesID));
+  }
 
-  // getLocalStorage = () => {
-  //   const favoriteSpellIDs = window.localStorage.getItem("favoriteSpellsIDs")
-  //   if (!favoriteSpellIDs) {
-  //     return;
-  //   }
-  //   const savedFavoriteSpellsIDs = JSON.parse(favoriteSpellIDs)
-  //   this.setState({ favoritesID: savedFavoriteSpellsIDs })
-  // }
+  getLocalStorage = () => {
+    const favoriteSpellIDs = window.localStorage.getItem("favoriteSpellsIDs")
+    if (!favoriteSpellIDs) {
+      return;
+    }
+    const savedFavoriteSpellsIDs = JSON.parse(favoriteSpellIDs)
+    this.setState({ favoritesID: savedFavoriteSpellsIDs })
+  }
 
   displayFavorites = () => {
     let matchedSpell = this.state.spells.filter(spell => {

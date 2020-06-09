@@ -39,6 +39,11 @@ const mockSpellsData = [
 getSpells.mockResolvedValue(mockSpellsData);
 
 describe("SpellsContainer", () => {
+
+  beforeEach(() => {
+    localStorage.clear();
+  });
+  
   it("should render a loading message when fetching the spell data", () => {
     const router = (
       <MemoryRouter>
