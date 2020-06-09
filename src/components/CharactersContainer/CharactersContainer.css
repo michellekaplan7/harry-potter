@@ -1,0 +1,57 @@
+.characters-page {
+  background-image: url("/images/hungarian-horntail-dragon.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.characters-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-gap: 1em;
+  padding: 2em 10em;
+}
+
+.character-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2em 2em 0 0;
+}
+
+.characters-header {
+  justify-content: center;
+  display: flex;
+  margin-top: 0.5em;
+}
+
+.loading-message {
+  color: #bf4e4e;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+}
+
+.no-favorites-message {
+  color: red;
+  font-size: 4em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 1000px) {
+  .characters-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .characters-container {
+    padding: 2em 3em;
+    justify-content: center;
+    overflow: auto;
+  }
+}

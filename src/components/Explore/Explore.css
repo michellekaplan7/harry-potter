@@ -48,3 +48,12 @@ a {
     text-decoration: none;
     outline: none;
 }
+
+@media only screen and (max-width: 658px) {
+    .explore-container {
+      overflow: auto;
+    }
+    .explore-button {
+        width: 13em;
+    }
+  }

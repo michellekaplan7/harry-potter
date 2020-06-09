@@ -16,8 +16,8 @@ const Explore = () => {
         <Link to="/explore/advice">
           <button className="explore-button">Advice From Hermione</button>
         </Link>
-        <Link to="/explore/students">
-          <button className="explore-button">View Students</button>
+        <Link to="/explore/characters">
+          <button className="explore-button">View Characters</button>
         </Link>
       </div>
     </div>
