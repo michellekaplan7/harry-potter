@@ -28,3 +28,10 @@
     display: flex;
     margin-top: 0.5em;
 }
+
+.loading-message {
+    color: #bf4e4e;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
